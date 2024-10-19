@@ -1,0 +1,19 @@
+{
+  "name": "Tvz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module", 
+  "scripts": {
+    "dev": "npx nodemon index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0",
+    "express": "^4.21.1",
+    "puppeteer": "^23.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
