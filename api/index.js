@@ -1,6 +1,6 @@
-import channels from './listTv/index.js';
-import fetchChannel from './util/index.js';
-import botInit from './bot/index.js';
+import channels from '../listTv/index.js';
+import fetchChannel from '../util/index.js';
+import botInit from '../bot/index.js';
 import express from 'express';
 const app = express(); // Cria uma instância do Express
 const port = 3000; // Define a porta em que o servidor irá rodar
