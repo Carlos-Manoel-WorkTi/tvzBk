@@ -4,6 +4,7 @@
   "main": "src/api/index.js", 
   "type": "module",
   "scripts": {
+    "postinstall": "npx puppeteer install",
     "dev": "npx nodemon src/api/index.js", 
     "start": "node ./src/api/index.js"
   },
