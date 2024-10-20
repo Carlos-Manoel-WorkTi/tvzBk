@@ -6,7 +6,7 @@ dotenv.config();
 
 async function initBrowser() {
   const browser = await puppeteer.launch({
-    args: ["--no-sandbox", "--disable-setuid-sandbox", "single-process","no-zygote"],
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
     executablePath: process.env.NODE_ENV === "production" ? process.env.PUPPETEER_EXECUTABLE_PATH : puppeteer.executablePath(),
     headless: true,
   });
