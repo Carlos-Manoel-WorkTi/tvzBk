@@ -18,7 +18,6 @@ const botInit = async (channels, fetchChannelProgramming) => {
   const allChannels = [];
 
   const browser = await initBrowser();
-  await browser.page.setDefaultTimeout(120000);
   const page = await browser.newPage();
 
   await page.setRequestInterception(true);
