@@ -1,5 +1,8 @@
 import puppeteer from "puppeteer";
-require("dotenv").config();
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
 
 async function initBrowser() {
   const browser = await puppeteer.launch({
