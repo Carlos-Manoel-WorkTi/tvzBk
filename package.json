@@ -1,7 +1,7 @@
 {
   "name": "tvz",
   "version": "1.0.0",
-  "main": "src/api/index.js", 
+  "main": "src/api/index.js",
   "type": "module",
   "scripts": {
     "postinstall": "npx puppeteer browsers install chrome",
@@ -9,11 +9,9 @@
     "start": "node ./src/api/index.js"
   },
   "dependencies": {
-    "axios": "^1.7.7",
     "cheerio": "^1.0.0",
     "express": "^4.21.1",
-    "puppeteer": "latest"
-
+    "puppeteer": "^23.6.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
