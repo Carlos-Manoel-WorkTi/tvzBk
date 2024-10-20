@@ -6,6 +6,7 @@ dotenv.config();
 
 async function initBrowser() {
   const browser = await puppeteer.launch({
+    protocolTimeout: 120000,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
     executablePath: process.env.NODE_ENV === "production" ? process.env.PUPPETEER_EXECUTABLE_PATH : puppeteer.executablePath(),
     headless: true,
@@ -17,6 +18,7 @@ const botInit = async (channels, fetchChannelProgramming) => {
   const allChannels = [];
 
   const browser = await initBrowser();
+  await browser.page.setDefaultTimeout(120000);
   const page = await browser.newPage();
 
   await page.setRequestInterception(true);
