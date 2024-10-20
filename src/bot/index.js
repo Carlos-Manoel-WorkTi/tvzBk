@@ -6,7 +6,7 @@ dotenv.config();
 
 async function initBrowser() {
   const browser = await puppeteer.launch({
-    protocolTimeout: 120000,
+    protocolTimeout: 120000, // Timeout global aumentado
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
     executablePath: process.env.NODE_ENV === "production" ? process.env.PUPPETEER_EXECUTABLE_PATH : puppeteer.executablePath(),
     headless: true,
@@ -51,14 +51,8 @@ const botInit = async (channels, fetchChannelProgramming) => {
     }
   }
 
-  // Fechando o navegadorm3u8
+  // Fechando o navegador
   await browser.close();
-
-  // Escrevendo as informações da programação em um único arquivo JSON
-  // fs.writeFileSync(
-  //   "programacao_tv.json",
-  //   JSON.stringify({ canais: allChannels }, null, 2)
-  // );
 
   console.log("Arquivo JSON criado: programacao_tv.json");
   return { canais: allChannels };
