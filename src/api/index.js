@@ -5,6 +5,8 @@ import express from 'express';
 const app = express(); // Cria uma instância do Express
 const port = 3000; // Define a porta em que o servidor irá rodar
 
+process.env.PUPPETEER_CACHE_DIR = '/opt/render/.cache/puppeteer';
+
 // Middleware para analisar JSON
 app.use(express.json());
 
