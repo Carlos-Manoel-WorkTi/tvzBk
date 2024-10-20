@@ -5,7 +5,10 @@ const fetchChannel = async function fetchChannelProgramming(page, url, channelNa
       console.log(`Iniciando a requisição para ${channelName}...`);
   
       // Navegando até a URL fornecida
-      await page.goto(url, { waitUntil: "networkidle2" });
+      await page.goto(url, { waitUntil: "networkidle2" }, { 
+        waitUntil: 'networkidle0', // Espera até que não haja mais de 0 conexões de rede por pelo menos 500 ms
+        timeout: 120000 
+      });
   
       // Selecionando as informações da programação
       const programming = await page.evaluate(() => {
